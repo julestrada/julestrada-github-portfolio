@@ -1,0 +1,43 @@
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+category
+-
+category_id PK varchar(5) FK >- crowdfunding.category_id
+category varchar(30) 
+
+
+subcategory
+-
+subcategory_id PK varchar(8) FK >- crowdfunding.subcategory_id
+subcategory varchar(30)
+
+
+crowdfunding
+-
+cf_id PK int
+contact_id int
+company_name varchar(30)
+blurb str
+goal int
+pledged int
+outcome str
+backers_count int
+country varchar(5)
+currency varchar(5)
+launched_at int
+deadline int
+staff_pick bool
+spotlight bool
+category_id varchar(15)
+subcategory_id varchar(30)
+
+
+contacts
+-
+contact_id PK int FK -< crowdfunding.contact_id
+first_name varchar(30)
+last_name varchar(30)
+email varchar(30)
+
